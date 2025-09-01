@@ -96,7 +96,7 @@ ul li {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 840px) {
   .header h1,
   .header .bio,
   .header .contact {
