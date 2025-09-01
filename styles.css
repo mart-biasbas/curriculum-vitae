@@ -1,0 +1,139 @@
+/* Reset + global */
+body, html {
+  margin: 0;
+  padding: 0;
+  background-color: white;
+  font-family: Arial, sans-serif;
+  width: 100%;
+  align-items: center;
+  font-size: 15px;
+}
+
+/* Header */
+.header {
+  line-height: 1.5;
+  text-align: center;
+}
+
+.bio {
+  text-align: justify;
+  padding: 0;
+}
+
+.header h1 {
+  margin: 0;
+}
+
+.header .role {
+  font-size: 18px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  color: #444;
+}
+
+.header .contact {
+  margin-top: 10px;
+}
+
+.header .contact ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+}
+
+.header .contact li {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Main content */
+.content {
+  padding: 20px 250px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.content h1 {
+  font-size: 22px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+.content h2 {
+  font-size: 22px;
+}
+
+.content h3 {
+  font-size: 18px;
+}
+
+.company {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.date {
+  float: right;
+  font-weight: normal;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Contributions */
+ul {
+  padding-left: 20px;
+  margin: 10px 0;
+}
+
+ul li {
+  margin-bottom: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .content {
+    margin: 20px;
+  }
+  .date {
+    float: none;
+    display: block;
+    margin-top: 2px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .footer {
+    display: none !important;
+  }
+
+  body, html {
+    background: white !important;
+    color: black !important;
+  }
+
+  .content {
+    padding: 0;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  .date {
+    float: right;
+  }
+}
+
+/* Use full paper */
+@page {
+  size: A4;   /* or letter */
+  margin: 0;  /* remove browser default print margins */
+}

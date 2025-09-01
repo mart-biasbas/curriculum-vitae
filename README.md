@@ -1,1 +1,2 @@
-# curriculum-vitae
+# Raymart Ortega Biasbas
+Data Scientist with over 3 years of experience, including 3 years working within a Business Intelligence team. Skilled in Python, R, and SQL, with expertise in machine learning, statistical analysis, and data visualization. Aspiring AI/ML Engineer with a strong interest in model deployment, MLOps, and scalable AI solutions.
