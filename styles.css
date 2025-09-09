@@ -7,7 +7,6 @@ body, html {
   width: 100%;
   font-size: 15px;
 }
-
 /* Header */
 .header {
   line-height: 1.5;
@@ -52,12 +51,14 @@ body, html {
   gap: 5px;
 }
 
+
 /* Main content */
 .content {
   padding: 20px 250px; /* big padding for large screens */
   font-size: 15px;
   line-height: 1.5;
 }
+
 
 .content h1 {
   font-size: 22px;
@@ -85,6 +86,21 @@ body, html {
   color: #555;
 }
 
+
+.tech-stack ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
+  list-style: none;   /* removes bullets */
+  padding: 0;         /* removes default padding */
+  margin: 0;          /* removes default margin */
+  font-size: 14px;
+}
+
+.tech-stack li {
+  margin-right: 15px; /* optional spacing between items */
+}
+
+
 /* Contributions */
 ul {
   padding-left: 20px;
@@ -94,6 +110,31 @@ ul {
 ul li {
   margin-bottom: 5px;
 }
+
+.client-experience {
+  margin-left: 30px;  /* pushes the whole block to the right */
+  padding-left: 15px; /* optional, adds space inside */
+}
+
+.client-experience h2 {
+  font-size: 18px;
+}
+
+.client-experience .company {
+  font-size: 15px;  /* pushes the whole block to the right */
+}
+
+
+.certifications ul {
+  list-style: none;   /* removes bullets */
+  padding: 0;         /* removes default padding */
+  margin: 0;          /* removes default margin */
+}
+
+.certifications li {
+  margin-right: 15px; /* optional spacing between items */
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 840px) {
