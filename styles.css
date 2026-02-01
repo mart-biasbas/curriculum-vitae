@@ -2,68 +2,97 @@
 body, html {
   margin: 0;
   padding: 0;
-  background-color: white;
-  font-family: Arial, sans-serif;
-  width: 100%;
+  background-color: #ffffff;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #222;
 }
 
 /* Header */
 .header {
   text-align: center;
-  line-height: 1.5;
+  padding: 30px 10px;
+  border-bottom: 3px solid #0b2f6b;
+  box-shadow: none;
+  background-color: transparent;
 }
 
 .header h1 {
   margin: 0;
+  font-size: 32px;
+  font-weight: bold;
+  color: #0b2f6b;
 }
 
 .bio {
   text-align: justify;
-  padding: 0 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  color: #333;
+  margin-top: 10px;
+  line-height: 1.7;
 }
 
+/* Contacts (plain black, no bullets, no arrows) */
 .header .contact ul {
   list-style: none;
   padding: 0;
-  margin: 10px 0;
+  margin: 15px 0 0 0;
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: 25px;
+  flex-wrap: wrap;
 }
 
 .header .contact li {
   font-size: 14px;
+  color: #000;  /* black text */
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  position: relative;
+  padding-left: 0;
+}
+
+.header .contact li::before {
+  content: none; /* remove arrow/bullet */
 }
 
 /* Main content */
 .content {
-  padding: 20px 80px; /* reasonable width for printing */
+  padding: 30px 80px;
   font-size: 15px;
+  background-color: #ffffff;
 }
 
+/* Headings */
 .content h1 {
-  font-size: 22px;
-  margin-bottom: 10px;
+  font-size: 26px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #0b2f6b;
+  padding-bottom: 5px;
+  color: #0b2f6b;
 }
 
 .content h2 {
-  font-size: 20px;
-  margin-top: 20px;
+  font-size: 22px;
+  margin-top: 30px;
+  margin-bottom: 5px;
+  color: #0b2f6b;
 }
 
 .content h3 {
   font-size: 16px;
   margin-top: 15px;
+  font-weight: bold;
+  color: #0b2f6b;
 }
 
 .company {
   font-weight: bold;
   font-size: 16px;
+  color: #0b2f6b;
 }
 
 .date {
@@ -73,63 +102,99 @@ body, html {
   color: #555;
 }
 
-/* Professional Experience & Bullets */
+/* Experience lists with arrow tips */
 ul {
-  padding-left: 25px; /* indent bullets */
+  padding-left: 25px; 
   margin: 10px 0;
+  list-style: none; /* remove default bullets */
 }
 
 ul li {
   margin-bottom: 5px;
+  line-height: 1.5;
+  position: relative;
+  padding-left: 18px;
+}
+
+ul li::before {
+  content: "➤"; /* arrow tip instead of bullet */
+  position: absolute;
+  left: 0;
+  color: #0b2f6b;
+  font-weight: bold;
 }
 
 /* Client Experience smaller and indented */
 .client-experience {
-  margin-left: 20px;  /* pushes entire client block right */
-  padding-left: 10px; /* optional inner padding */
+  margin-left: 25px;
+  padding-left: 15px;
+  margin-top: 15px;
 }
 
 .client-experience ul {
-  padding-left: 20px; /* indent bullets further */
+  padding-left: 20px;
+  list-style: none; 
+}
+
+.client-experience ul li::before {
+  content: "➤"; /* arrow tip for client experience */
+  position: absolute;
+  left: 0;
+  color: #0b2f6b;
+  font-weight: bold;
 }
 
 .client-experience h3 {
-  font-size: 14px;
+  font-size: 15px;
   margin-bottom: 5px;
+  font-weight: bold;
+  color: #0b2f6b;
 }
 
 .client-experience .company {
-  font-size: 13px;
+  font-size: 14px;
+  color: #0b2f6b;
 }
 
-/* Tech Stack */
+/* Tech Stack as light blue / grey-blue pills without arrows */
 .tech-stack ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  padding-left: 0;
   list-style: none;
-  padding: 0;
   margin: 0;
 }
 
 .tech-stack li {
-  margin-bottom: 5px;
+  margin-bottom: 15px; /* vertical spacing between categories */
+  font-weight: bold;
+  color: #0b2f6b;
 }
 
-/* Certifications */
-.certifications ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.tech-stack .pill {
+  display: inline-block;
+  background-color: #d9e4f5; /* light blue / grey-blue */
+  color: #0b2f6b;
+  padding: 5px 12px;
+  border-radius: 25px;
+  font-size: 14px;
+  margin-right: 8px; /* space between pills */
+  margin-top: 5px;   /* small gap above for neatness */
 }
 
-.certifications li {
-  margin-bottom: 5px;
+.tech-stack li::before {
+  content: none !important; /* remove arrows from pills */
+}
+
+/* Section Separators */
+section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d0d4e0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 840px) {
   .content {
-    padding: 10px 15px;
+    padding: 15px 15px;
   }
 
   .date {
@@ -142,28 +207,72 @@ ul li {
     margin-left: 0;
     padding-left: 10px;
   }
+
+  .tech-stack ul {
+    justify-content: center;
+  }
 }
 
+/* Print styles */
 /* Print styles */
 @media print {
   body, html {
     background: white !important;
     color: black !important;
+    font-size: 14px;
   }
 
   .content {
-    padding: 0 20px;
+    padding: 0 20px; 
+  }
+
+  /* Experience arrow tips */
+  ul li::before {
+    color: black;
   }
 
   .date {
     float: right;
+    color: black;
   }
 
   .client-experience {
     margin-left: 20px;
     padding-left: 10px;
   }
+
+  /* Tech stack pills forced background in print */
+  .tech-stack .pill {
+    display: inline-block;
+    background-color: #d9e4f5 !important; /* force light blue */
+    -webkit-print-color-adjust: exact !important; /* make sure color prints */
+    print-color-adjust: exact !important;       /* for Firefox */
+    color: #0b2f6b !important;
+    padding: 5px 12px;
+    border-radius: 25px;
+    font-size: 13px;
+    margin-right: 8px;
+    margin-top: 4px;
+  }
+
+  /* Contacts black, no arrows */
+  .header .contact li {
+    color: black !important;
+    padding-left: 0 !important;
+  }
+
+  section {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #999;
+  }
+
+  .header {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
 }
+
 
 /* Page size for PDF */
 @page {
