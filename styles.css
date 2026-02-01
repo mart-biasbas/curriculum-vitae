@@ -6,42 +6,31 @@ body, html {
   font-family: Arial, sans-serif;
   width: 100%;
   font-size: 15px;
-}
-/* Header */
-.header {
   line-height: 1.5;
-  text-align: center;
 }
 
-.bio {
-  text-align: justify;
-  padding: 0;
+/* Header */
+.header {
+  text-align: center;
+  line-height: 1.5;
 }
 
 .header h1 {
   margin: 0;
 }
 
-.header .role {
-  font-size: 18px;
-  margin-top: 5px;
-  margin-bottom: 15px;
-  font-weight: normal;
-  color: #444;
-}
-
-.header .contact {
-  margin-top: 10px;
+.bio {
+  text-align: justify;
+  padding: 0 20px;
 }
 
 .header .contact ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 10px 0;
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 20px;
 }
 
 .header .contact li {
@@ -51,27 +40,25 @@ body, html {
   gap: 5px;
 }
 
-
 /* Main content */
 .content {
-  padding: 20px 250px; /* big padding for large screens */
+  padding: 20px 80px; /* reasonable width for printing */
   font-size: 15px;
-  line-height: 1.5;
 }
-
 
 .content h1 {
   font-size: 22px;
-  margin-bottom: 0;
-  padding-bottom: 0;
+  margin-bottom: 10px;
 }
 
 .content h2 {
-  font-size: 22px;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .content h3 {
-  font-size: 18px;
+  font-size: 16px;
+  margin-top: 15px;
 }
 
 .company {
@@ -86,24 +73,9 @@ body, html {
   color: #555;
 }
 
-
-.tech-stack ul {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 equal columns */
-  list-style: none;   /* removes bullets */
-  padding: 0;         /* removes default padding */
-  margin: 0;          /* removes default margin */
-  font-size: 14px;
-}
-
-.tech-stack li {
-  margin-right: 15px; /* optional spacing between items */
-}
-
-
-/* Contributions */
+/* Professional Experience & Bullets */
 ul {
-  padding-left: 20px;
+  padding-left: 25px; /* indent bullets */
   margin: 10px 0;
 }
 
@@ -111,80 +83,90 @@ ul li {
   margin-bottom: 5px;
 }
 
+/* Client Experience smaller and indented */
 .client-experience {
-  margin-left: 30px;  /* pushes the whole block to the right */
-  padding-left: 15px; /* optional, adds space inside */
+  margin-left: 20px;  /* pushes entire client block right */
+  padding-left: 10px; /* optional inner padding */
 }
 
-.client-experience h2 {
-  font-size: 12px;
+.client-experience ul {
+  padding-left: 20px; /* indent bullets further */
+}
+
+.client-experience h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
 }
 
 .client-experience .company {
-  font-size: 12px;  /* pushes the whole block to the right */
+  font-size: 13px;
 }
 
+/* Tech Stack */
+.tech-stack ul {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.tech-stack li {
+  margin-bottom: 5px;
+}
+
+/* Certifications */
 .certifications ul {
-  list-style: none;   /* removes bullets */
-  padding: 0;         /* removes default padding */
-  margin: 0;          /* removes default margin */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .certifications li {
-  margin-right: 15px; /* optional spacing between items */
+  margin-bottom: 5px;
 }
-
 
 /* Responsive adjustments */
 @media (max-width: 840px) {
-  .header h1,
-  .header .bio,
-  .header .contact {
-    float: none;
-    width: 100%;
-    text-align: center;
-    margin: 5px 0;
-    padding: 0;
-  }
-
   .content {
-    padding: 10px 15px; /* smaller padding for mobile */
+    padding: 10px 15px;
   }
 
   .date {
     float: none;
     display: block;
-    text-align: right; /* keeps date aligned neatly */
+    text-align: right;
+  }
+
+  .client-experience {
+    margin-left: 0;
+    padding-left: 10px;
   }
 }
 
 /* Print styles */
 @media print {
-  .footer {
-    display: none !important;
-  }
-
   body, html {
     background: white !important;
     color: black !important;
   }
 
   .content {
-    padding: 0;
-  }
-
-  .header {
-    padding: 0;
+    padding: 0 20px;
   }
 
   .date {
     float: right;
   }
+
+  .client-experience {
+    margin-left: 20px;
+    padding-left: 10px;
+  }
 }
 
-/* Use full paper */
+/* Page size for PDF */
 @page {
   size: A4;
-  margin: 0;
+  margin: 20mm;
 }
